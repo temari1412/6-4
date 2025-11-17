@@ -1,4 +1,4 @@
-問32 
+-- 問32 
 SELECT ranking, group_name
 FROM countries
 WHERE group_name = 'A'
@@ -8,13 +8,13 @@ WHERE group_name = 'A'
     WHERE group_name = 'A'
 );
 
-問33
+-- 問33
 SELECT SUM(ranking) AS total_ranking
 FROM countries
 WHERE group_name = 'C';
 
 
-問34
+-- 問34
 SELECT
   countries.name AS country_name,
   players.name AS player_name,
@@ -23,7 +23,7 @@ FROM players
 JOIN countries ON players.country_id = countries.id;
 
 
-問35
+-- 問35
 SELECT 
     countries.name AS country_name,
     players.name AS player_name,
@@ -34,7 +34,7 @@ JOIN countries ON players.country_id = countries.id
 ORDER BY goals.goal_time;
 
 
-問36
+-- 問36
 SELECT
     goals.id AS goal_number,
     players.uniform_num,
@@ -45,7 +45,7 @@ LEFT JOIN players ON goals.player_id = players.id
 ORDER BY goals.id;
 
 
-問37
+-- 問37
 SELECT
     goals.goal_time,
     COALESCE(players.name, 'オウンゴール') AS player_name
@@ -54,7 +54,7 @@ RIGHT JOIN goals ON players.id = goals.player_id
 ORDER BY goals.goal_time;
 
 
-問38
+-- 問38
 SELECT
     goals.goal_time AS goal_time,
     players.uniform_num AS uniform_number,
@@ -65,5 +65,5 @@ RIGHT JOIN goals ON players.id = goals.player_id
 ORDER BY goals.goal_time;
 
 
-問39
+-- 問39
 SELECT * FROM pairings LIMIT 10;
